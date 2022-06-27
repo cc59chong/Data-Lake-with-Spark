@@ -46,8 +46,7 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 ## Schema for Song Play Analysis
 A **star schema** is required for optimized queries on song play queries.<br>
-![image](https://user-images.githubusercontent.com/55506640/176052995-18b762cd-f727-4553-9050-80595a16ba2e.png)
->**Fact Table**<br>
+![image](https://user-images.githubusercontent.com/55506640/176053382-50924370-c0aa-4bae-9e85-95b44420fc0e.png)>**Fact Table**<br>
 * **songplays** - records in event data associated with song plays i.e. records with page `NextSong`<br>
 ```songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent```<br>
 >**Dimension Tables**<br>
