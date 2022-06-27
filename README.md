@@ -44,3 +44,21 @@ log_data/2018/11/2018-11-13-events.json
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.
 ![image](https://user-images.githubusercontent.com/55506640/173003449-803e6b31-c4f5-48a5-b056-29a3b231ef51.png)
 
+## Schema for Song Play Analysis
+A **star schema** is required for optimized queries on song play queries.<br>
+![image](https://user-images.githubusercontent.com/55506640/176052995-18b762cd-f727-4553-9050-80595a16ba2e.png)
+>**Fact Table**<br>
+* **songplays** - records in event data associated with song plays i.e. records with page `NextSong`<br>
+```songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent```<br>
+>**Dimension Tables**<br>
+* **users** - users in the app<br>
+```user_id, first_name, last_name, gender, level```<br>
+* **songs** - songs in music database<br>
+```song_id, title, artist_id, year, duration```<br>
+* **artists** - artists in music database<br>
+```artist_id, name, location, lattitude, longitude```<br>
+* **time** - timestamps of records in songplays broken down into specific units<br>
+```start_time, hour, day, week, month, year, weekday```<br>
+> **Staging Table** - which copy the JSON file inside the S3 buckets.<br>
+* **staging_songs** - info about songs and artists<br>
+* **staging_events** - actions done by users (which song are listening, etc.. )
