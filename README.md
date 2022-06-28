@@ -58,6 +58,4 @@ A **star schema** is required for optimized queries on song play queries.<br>
 ```artist_id, name, location, lattitude, longitude```<br>
 * **time** - timestamps of records in songplays broken down into specific units<br>
 ```start_time, hour, day, week, month, year, weekday```<br>
-> **Staging Table** - which copy the JSON file inside the S3 buckets.<br>
-* **staging_songs** - info about songs and artists<br>
-* **staging_events** - actions done by users (which song are listening, etc.. )
+
