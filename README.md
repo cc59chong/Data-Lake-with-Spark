@@ -46,7 +46,8 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 ## Schema for Song Play Analysis
 A **star schema** is required for optimized queries on song play queries.<br>
-![image](https://user-images.githubusercontent.com/55506640/176053382-50924370-c0aa-4bae-9e85-95b44420fc0e.png)>**Fact Table**<br>
+![image](https://user-images.githubusercontent.com/55506640/176053382-50924370-c0aa-4bae-9e85-95b44420fc0e.png)
+>**Fact Table**<br>
 * **songplays** - records in event data associated with song plays i.e. records with page `NextSong`<br>
 ```songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent```<br>
 >**Dimension Tables**<br>
@@ -58,4 +59,8 @@ A **star schema** is required for optimized queries on song play queries.<br>
 ```artist_id, name, location, lattitude, longitude```<br>
 * **time** - timestamps of records in songplays broken down into specific units<br>
 ```start_time, hour, day, week, month, year, weekday```<br>
-
+## Project Template
+Working on this project on your local computer, and then move on to the bigger dataset on AWS.<br>
+The project template includes 2 files:<br>
+`etl.py`- reads data from S3, processes that data using Spark, and writes them back to S3.<br>
+`dl.cfg`- contains the AWS credentials.<br>
